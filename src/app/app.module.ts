@@ -10,6 +10,7 @@ import { InfoComponent } from './info/info.component';
 import { DefaultComponent } from './default/default.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {} from '@angular/material';
+import { QuestionsComponent } from './quiz/questions/questions.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {} from '@angular/material';
     GalleryComponent,
     QuizComponent,
     InfoComponent,
-    DefaultComponent
+    DefaultComponent,
+    QuestionsComponent
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
