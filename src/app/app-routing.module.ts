@@ -4,6 +4,7 @@ import { GalleryComponent } from "./gallery/gallery.component";
 import { QuizComponent } from "./quiz/quiz.component";
 import { InfoComponent } from "./info/info.component";
 import { DefaultComponent } from "./default/default.component";
+import { QuestionsComponent } from "./quiz/questions/questions.component";
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: "",
     component: DefaultComponent
+  },
+  {
+    path: "questions",
+    component: QuestionsComponent
   }
 ];
 
