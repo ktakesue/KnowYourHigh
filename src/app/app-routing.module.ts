@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { GalleryComponent } from "./gallery/gallery.component";
 import { QuizComponent } from "./quiz/quiz.component";
 import { InfoComponent } from "./info/info.component";
+import { DefaultComponent } from "./default/default.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: "info",
     component: InfoComponent
+  },
+  {
+    path: "",
+    component: DefaultComponent
   }
 ];
 

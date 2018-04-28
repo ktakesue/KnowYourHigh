@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { InfoComponent } from './info/info.component';
+import { DefaultComponent } from './default/default.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { InfoComponent } from './info/info.component';
     AppComponent,
     GalleryComponent,
     QuizComponent,
-    InfoComponent
+    InfoComponent,
+    DefaultComponent
   ],
   imports: [
     BrowserModule,
