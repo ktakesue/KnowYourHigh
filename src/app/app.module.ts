@@ -8,7 +8,8 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { InfoComponent } from './info/info.component';
 import { DefaultComponent } from './default/default.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -18,11 +19,8 @@ import { DefaultComponent } from './default/default.component';
     InfoComponent,
     DefaultComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
