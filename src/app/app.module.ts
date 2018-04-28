@@ -9,7 +9,15 @@ import { QuizComponent } from './quiz/quiz.component';
 import { InfoComponent } from './info/info.component';
 import { DefaultComponent } from './default/default.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {} from '@angular/material';
+import {
+  MatMenuModule,
+  MatProgressSpinnerModule,
+  MatButtonModule,
+  MatDividerModule,
+  MatTooltipModule,
+  MatListModule,
+  MatExpansionModule
+} from '@angular/material';
 import { QuestionsComponent } from './quiz/questions/questions.component';
 
 @NgModule({
@@ -21,7 +29,18 @@ import { QuestionsComponent } from './quiz/questions/questions.component';
     DefaultComponent,
     QuestionsComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatProgressSpinnerModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatTooltipModule,
+    MatListModule,
+    MatExpansionModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
