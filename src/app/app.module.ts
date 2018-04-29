@@ -18,7 +18,8 @@ import {
   MatTooltipModule,
   MatListModule,
   MatExpansionModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatIconModule
 } from '@angular/material';
 import { QuestionsComponent } from './quiz/questions/questions.component';
 import { ProgressSpinnerService } from './progress-spinner.service';
@@ -44,7 +45,8 @@ import { ProgressSpinnerService } from './progress-spinner.service';
     MatTooltipModule,
     MatListModule,
     MatExpansionModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [ProgressSpinnerService],
   bootstrap: [AppComponent]

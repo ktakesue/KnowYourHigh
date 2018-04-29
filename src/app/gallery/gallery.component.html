@@ -3,9 +3,10 @@
     <img src="{{photos[(counter$ | async )]}}" id="image">
 
     <h1> Dis is Image</h1>
-    <button (click)="button$.next(-1)" id="button"> Prev</button>
-    <button (click)="button$.next(1)" id="button">Next</button>
-    <br>
-    <br>
-    <a routerLink="" class="nav-text" style=" text-decoration:none">Let's Go Back</a>
+    <button (click)="button$.next(-1)" id="button">
+        <- </button>
+            <button (click)="button$.next(1)" id="button">-></button>
+            <br>
+            <br>
+            <a routerLink="" class="nav-text" style=" text-decoration:none">Let's Go Back</a>
 </div>

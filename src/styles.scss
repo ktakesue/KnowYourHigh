@@ -7,13 +7,20 @@
 $Poppin-font: 'Poppins', sans-serif;
 $darkgr-color: #015527;
 $Leaf-color: #008023;
+$darker-grey: #212121;
+$lighter-grey: #303030;
 
 .theme {
   @include angular-material-theme($theme);
 }
 body {
   font-family: $Poppin-font;
-  background-color: #303030;
+  background-color: $darker-grey;
+  text-transform: uppercase;
+  background: url('./assets/background.jpg');
+}
+#toolbar {
+  background-color: $lighter-grey;
 }
 
 a:hover {
@@ -24,13 +31,28 @@ a:click {
 }
 
 #logo {
-  max-width: 30px;
-  max-height: 30px;
+  max-width: 50px;
+  max-height: 50px;
+  justify-self: center;
+  justify-content: center;
 }
 
 .fill-space-toolbar {
   flex: 1 1;
 }
+h1 {
+  background-color: $darker-grey;
+}
 p {
   color: white;
+}
+#wrapper,
+#list {
+  background-color: $darker-grey;
+  overflow: auto;
+}
+
+#wrapper {
+  width: 600px;
+  height: 600px;
 }
