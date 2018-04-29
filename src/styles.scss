@@ -1,11 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import '~@angular/material/theming';
 @import 'theme.scss';
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 $Poppin-font: 'Poppins', sans-serif;
+$darkgr-color: #015527;
+$Leaf-color: #008023;
 
+.theme {
+  @include angular-material-theme($theme);
+}
 body {
   font-family: $Poppin-font;
   background-color: #303030;
+}
+
+a:hover {
+  outline: $Leaf-color;
+}
+a:click {
+  color: $darkgr-color;
+}
+
+#logo {
+  max-width: 30px;
+  max-height: 30px;
+}
+
+.fill-space-toolbar {
+  flex: 1 1;
+}
+p {
+  color: white;
 }

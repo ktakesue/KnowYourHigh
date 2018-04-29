@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { PHOTOS } from 'assets/galleryphotos';
+import { ProgressSpinnerService } from '../progress-spinner.service';
 
 @Component({
   selector: 'kt-gallery',
   templateUrl: './gallery.component.html',
-  //   template: `
-  //  <img src= "{{photos[(counter$ | async )]}}">
-  //  <h1> Dis is Image</h1>
-  //  <button (click)="button$.next(-1)"> Prev</button>
-  //  <button (click)="button$.next(1)">Next</button>`,
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
@@ -19,7 +15,15 @@ export class GalleryComponent implements OnInit {
   button$ = new Subject();
   counter$: Observable<any>;
 
-  constructor() {
+  constructor() // private http: Http, private ProgressSpinnerService: ProgressSpinnerService
+  {
+    //     this.ProgressSpinnerService.spinnerActive.subscribe(active =>
+    //       this.toggleSpinner(active))
+    //     }
+    //     toggleSpinner(active) {
+    //     console.log('inside toggle spinner')
+    //     this.spinnerActive = active
+    // }
     this.counter$ = Observable.merge(
       this.button$,
       Observable.interval(10000).mapTo(1)
@@ -34,6 +38,5 @@ export class GalleryComponent implements OnInit {
         return acc + curr;
       });
   }
-
   ngOnInit() {}
 }
