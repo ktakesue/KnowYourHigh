@@ -1,0 +1,40 @@
+$anim-text-offset: 1em;
+h1 {
+  color: white;
+  grid-column: 1;
+  justify-self: center;
+}
+#container {
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 2;
+  justify-content: center;
+}
+#image {
+  max-width: 100%;
+  grid-column: 1;
+}
+
+#button {
+  grid-row: 2;
+  text-align: center;
+
+  touch-callout: none;
+  user-select: none;
+  display: inline-block;
+  border: 0.2em solid;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0.6;
+  color: #fff;
+  &__text {
+    display: block;
+    padding: 1em 2em;
+  }
+}
+
+.nav-text {
+  color: white;
+  justify-self: center;
+}
