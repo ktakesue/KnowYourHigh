@@ -10,15 +10,19 @@ import { InfoComponent } from "./info/info.component";
 import { DefaultComponent } from "./default/default.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
+  //can add additional modules from Angular Materials here
   MatMenuModule,
   MatProgressSpinnerModule,
   MatButtonModule,
   MatDividerModule,
   MatTooltipModule,
   MatListModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatToolbarModule,
+  MatIconModule
 } from "@angular/material";
 import { QuestionsComponent } from "./quiz/questions/questions.component";
+import { ProgressSpinnerService } from "./progress-spinner.service";
 
 @NgModule({
   declarations: [
@@ -30,6 +34,7 @@ import { QuestionsComponent } from "./quiz/questions/questions.component";
     QuestionsComponent
   ],
   imports: [
+    //update Material Angular imports down here too!
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -39,9 +44,11 @@ import { QuestionsComponent } from "./quiz/questions/questions.component";
     MatDividerModule,
     MatTooltipModule,
     MatListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatToolbarModule,
+    MatIconModule
   ],
-  providers: [],
+  providers: [ProgressSpinnerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

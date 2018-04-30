@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { OverlayContainer } from '@angular/cdk/overlay';
+import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
+import { ActivationEnd, Router, NavigationEnd } from '@angular/router';
+import { Subject } from 'rxjs';
+import { takeUntil, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'kt-root',
@@ -7,4 +11,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'KNOW YOUR HIGH';
+  themeClass: string;
 }

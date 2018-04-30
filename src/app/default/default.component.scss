@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
 
 $Poppin-font: 'Poppins', sans-serif;
+$darkgr-color: #015527;
+$Leaf-color: #008023;
 
 body {
   font-family: $Poppin-font;
@@ -9,4 +11,20 @@ body {
 h2,
 h1 {
   color: white;
+}
+p {
+  color: $darkgr-color;
+  font-size: 24px;
+}
+
+#mat-expansion-panel-header-0 {
+  background-color: white;
+}
+
+.header {
+  background-color: white;
+}
+
+.header-text {
+  font-size: 27px;
 }
