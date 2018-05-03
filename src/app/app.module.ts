@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+// import { FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 
@@ -23,6 +24,7 @@ import {
 } from "@angular/material";
 import { QuestionsComponent } from "./quiz/questions/questions.component";
 import { ProgressSpinnerService } from "./progress-spinner.service";
+import { ResultComponent } from "./quiz/result/result.component";
 
 @NgModule({
   declarations: [
@@ -31,11 +33,13 @@ import { ProgressSpinnerService } from "./progress-spinner.service";
     QuizComponent,
     InfoComponent,
     DefaultComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    ResultComponent
   ],
   imports: [
     //update Material Angular imports down here too!
     BrowserModule,
+    // FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatMenuModule,

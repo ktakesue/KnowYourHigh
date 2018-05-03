@@ -5,27 +5,42 @@ import { QuizComponent } from "./quiz/quiz.component";
 import { InfoComponent } from "./info/info.component";
 import { DefaultComponent } from "./default/default.component";
 import { QuestionsComponent } from "./quiz/questions/questions.component";
+import { ResultComponent } from "./quiz/result/result.component";
 
 const routes: Routes = [
   {
-    path: "gallery",
-    component: GalleryComponent
+    path: "quiz/question/:questionId",
+    component: QuestionsComponent
+  },
+  {
+    path: "quiz/question",
+    component: QuestionsComponent
   },
   {
     path: "quiz",
     component: QuizComponent
   },
   {
+    path: "gallery",
+    component: GalleryComponent
+  },
+
+  {
     path: "info",
     component: InfoComponent
   },
   {
     path: "",
-    component: DefaultComponent
+    component: DefaultComponent,
+    pathMatch: "full"
   },
   {
-    path: "questions",
-    component: QuestionsComponent
+    path: "result",
+    component: ResultComponent
+  },
+  {
+    path: "**",
+    component: DefaultComponent
   }
 ];
 
