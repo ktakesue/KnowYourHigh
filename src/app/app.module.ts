@@ -9,6 +9,9 @@ import { GalleryComponent } from "./gallery/gallery.component";
 import { QuizComponent } from "./quiz/quiz.component";
 import { InfoComponent } from "./info/info.component";
 import { DefaultComponent } from "./default/default.component";
+import { ResultComponent } from "./quiz/result/result.component";
+import { QuestionsComponent } from "./quiz/questions/questions.component";
+
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {
   //can add additional modules from Angular Materials here
@@ -22,9 +25,9 @@ import {
   MatToolbarModule,
   MatIconModule
 } from "@angular/material";
-import { QuestionsComponent } from "./quiz/questions/questions.component";
+
 import { ProgressSpinnerService } from "./progress-spinner.service";
-import { ResultComponent } from "./quiz/result/result.component";
+import { QuizService } from "./quiz/quiz.service";
 
 @NgModule({
   declarations: [
@@ -52,7 +55,7 @@ import { ResultComponent } from "./quiz/result/result.component";
     MatToolbarModule,
     MatIconModule
   ],
-  providers: [ProgressSpinnerService],
+  providers: [ProgressSpinnerService, QuizService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
