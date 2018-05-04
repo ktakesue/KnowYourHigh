@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-// import { APIService } from '../api.service';
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
+import { APIService } from '../api.service';
 import 'rxjs/add/operator/map';
+import { Subscription } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'kt-info',
@@ -10,25 +10,18 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./info.component.scss']
 })
 export class InfoComponent {
-  private apiUrl = 'http://strainapi.evanbusse.com/Ui4UTeN/searchdata/effects';
   data: any = {};
-
+  selected;
+  subscription: Subscription;
   searchAPI(searchTerm: HTMLInputElement): void {
     console.log(`Yous entered: ${searchTerm.value}`);
   }
-  constructor(private http: Http) {
-    console.log('getting seed companies');
-    this.getSeedCo();
-    this.getData();
-  }
+  constructor(private APIService: APIService, private http: HttpClient) {}
 
-  getData() {
-    return this.http.get(this.apiUrl).map((res: Response) => res.json());
-  }
-  getSeedCo() {
-    this.getData().subscribe(data => {
+  onSelectChange() {
+    console.log('onSelectChange', this.selected);
+    this.subscription = this.APIService.get(this.selected).subscribe(data => {
       console.log(data);
-      this.data = data;
     });
   }
 
