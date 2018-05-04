@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-// import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -9,11 +9,17 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { InfoComponent } from './info/info.component';
 import { DefaultComponent } from './default/default.component';
+import { ResultComponent } from './quiz/result/result.component';
+import { QuestionsComponent } from './quiz/questions/questions.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   //can add additional modules from Angular Materials here
   MatMenuModule,
   MatProgressSpinnerModule,
+  MatProgressBarModule,
+  MatRadioModule,
+  MatRippleModule,
   MatButtonModule,
   MatDividerModule,
   MatTooltipModule,
@@ -29,11 +35,12 @@ import {
   RequestOptions,
   Response
 } from '@angular/http';
+
 import { HttpClientModule } from '@angular/common/http';
-import { QuestionsComponent } from './quiz/questions/questions.component';
-import { ProgressSpinnerService } from './progress-spinner.service';
-import { ResultComponent } from './quiz/result/result.component';
 import { APIService } from './api.service';
+
+import { ProgressSpinnerService } from './progress-spinner.service';
+import { QuizService } from './quiz/quiz.service';
 
 @NgModule({
   declarations: [
@@ -48,11 +55,15 @@ import { APIService } from './api.service';
   imports: [
     //update Material Angular imports down here too!
     BrowserModule,
-    // FormsModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatMenuModule,
     MatProgressSpinnerModule,
+    MatProgressBarModule,
+    MatRadioModule,
+    MatRippleModule,
     MatButtonModule,
     MatDividerModule,
     MatTooltipModule,
@@ -62,7 +73,7 @@ import { APIService } from './api.service';
     MatIconModule,
     HttpModule
   ],
-  providers: [ProgressSpinnerService, APIService],
+  providers: [ProgressSpinnerService, APIService, QuizService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

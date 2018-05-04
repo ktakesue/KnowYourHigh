@@ -1,3 +1,12 @@
-<p>
-  questions works!
-</p>
+<h2 class="question">{{question.question}}</h2>
+<mat-radio-group>
+  <mat-radio-button color="warn" *ngFor="let answer of question.answers" [value]="answer">
+    {{answer.answer}}
+  </mat-radio-button>
+</mat-radio-group>
+
+
+<br>
+<br>
+<button (click)="goBack()" mat-raised-button color="accent">Previous Question</button>
+<button (click)="submitAnswer()" mat-raised-button color="accent">Next Question</button>

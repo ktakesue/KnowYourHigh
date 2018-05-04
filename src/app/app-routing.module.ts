@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'quiz/question',
-    component: QuestionsComponent
+    redirectTo: 'quiz/question/1'
   },
   {
     path: 'quiz',
