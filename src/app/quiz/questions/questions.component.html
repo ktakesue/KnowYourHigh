@@ -1,4 +1,11 @@
-<h2>{{question.question}}</h2>
-<ul *ngFor="let answer of question.answers">
-  <h3>{{answer.answer}}</h3>
-</ul>
+<h2 class="question">{{question.question}}</h2>
+<mat-radio-group>
+  <mat-radio-button color="warn" *ngFor="let answer of question.answers" [value]="answer">
+    {{answer.answer}}
+  </mat-radio-button>
+</mat-radio-group>
+
+
+<br>
+<br>
+<button onclick="submitAnswer()" mat-raised-button color="accent">Next Question</button>

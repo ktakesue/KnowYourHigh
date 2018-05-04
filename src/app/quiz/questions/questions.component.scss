@@ -1,5 +1,16 @@
-h3 {
+.question {
+  font-size: 35px;
+}
+
+mat-radio-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+mat-radio-button {
+  margin: 5px;
+  font-size: 30px;
   &:hover {
-    color: aqua;
+    color: #19ff81;
   }
 }

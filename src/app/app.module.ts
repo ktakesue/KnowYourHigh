@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-// import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from "./app-routing.module";
 
@@ -17,6 +17,9 @@ import {
   //can add additional modules from Angular Materials here
   MatMenuModule,
   MatProgressSpinnerModule,
+  MatProgressBarModule,
+  MatRadioModule,
+  MatRippleModule,
   MatButtonModule,
   MatDividerModule,
   MatTooltipModule,
@@ -42,11 +45,15 @@ import { QuizService } from "./quiz/quiz.service";
   imports: [
     //update Material Angular imports down here too!
     BrowserModule,
-    // FormsModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatMenuModule,
     MatProgressSpinnerModule,
+    MatProgressBarModule,
+    MatRadioModule,
+    MatRippleModule,
     MatButtonModule,
     MatDividerModule,
     MatTooltipModule,
