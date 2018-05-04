@@ -7,11 +7,11 @@ import { AnswersService } from "../answers.service";
   selector: "kt-questions",
   templateUrl: "./questions.component.html",
   styleUrls: ["./questions.component.scss"],
-  providers: [QuizService]
+  providers: [QuizService, AnswersService]
 })
 export class QuestionsComponent implements OnInit {
   question: Question;
-  answerIndex: number | undefined;
+  points: Answer["points"];
 
   constructor(
     private quizService: QuizService,
@@ -25,15 +25,27 @@ export class QuestionsComponent implements OnInit {
   }
 
   submitAnswer() {
-    console.log("your final answer index is:", this.answerIndex);
-
+    console.log("your answer's points: ", this.points);
     const nextQuestionId = this.question.questionId + 1;
     this.router.navigateByUrl(`quiz/question/${nextQuestionId}`);
+    // const selectedAnswers = [];
+    // selectedAnswers.push(this.points);
+    // console.log("selectedAnswers", selectedAnswers);
   }
 
-  handleChange(answerIndex: number) {
-    this.answerIndex = answerIndex;
-    console.log(answerIndex);
+  handleChange(points: number) {
+    this.points = points;
+    console.log("points", points);
+  }
+
+  prevQuestion() {
+    console.log("go back bruh", this.points);
+    const prevQuestionId = this.question.questionId - 1;
+    this.router.navigateByUrl(`quiz/question/${prevQuestionId}`);
+  }
+
+  goBack() {
+    this.router.navigateByUrl("quiz");
   }
 
   ngOnInit() {}

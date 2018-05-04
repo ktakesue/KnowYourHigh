@@ -1,12 +1,19 @@
-<h2 class="question">{{question.question}}</h2>
-<mat-radio-group>
-  <mat-radio-button color="warn" *ngFor="let answer of question.answers; let i = index" [value]="answer" (change)="handleChange(i)">
-    {{answer.answer}}
-  </mat-radio-button>
-</mat-radio-group>
+<div class="quiz">
+  <h2 class="question">{{question.question}}</h2>
+  <div class="image">
+    <img src="{{question.image}}">
+  </div>
+  <mat-radio-group>
+    <mat-radio-button color="warn" *ngFor="let answer of question.answers" [value]="answer" (change)="handleChange(answer.points)">
+      {{answer.answer}}
+    </mat-radio-button>
+  </mat-radio-group>
 
 
-<br>
-<br>
-<button (click)="goBack()" mat-raised-button color="accent">Previous Question</button>
-<button (click)="submitAnswer()" mat-raised-button color="accent">Next Question</button>
+  <br>
+  <br>
+  <button (click)="goBack()" mat-raised-button color="accent" *ngIf="question.questionId === 1">Go Back Home</button>
+  <button (click)="prevQuestion()" mat-raised-button color="accent" *ngIf="question.questionId !== 1">Previous Question</button>
+  <button (click)="submitAnswer()" mat-raised-button color="accent" *ngIf="question.questionId < 10">Next Question</button>
+  <button (click)="calculateResult()" mat-raised-button color="accent" *ngIf="question.questionId === 10">Calculate Results!</button>
+</div>
