@@ -1,6 +1,10 @@
 <div style="text-align:center">
   <h1> Let's get Educated!! </h1>
 </div>
+<div id='searchBox'>
+  <input name="title" #searchTerm>
+  <button (click)="searchAPI(searchTerm)">Search</button>
+</div>
 
 <h2>
   There are 3 types of Cannabis:
@@ -30,6 +34,13 @@
       </ul>
     </li>
 </ul>
+
+<div class='card'>
+  <ng-container *ngFor='let seedco of data.Object'>
+    <h2> {{seedco.effect}}</h2>
+    <!-- <img src='{{seedco.image}}'> -->
+  </ng-container>
+</div>
 
 <br>
 <br>

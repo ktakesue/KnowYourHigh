@@ -1,15 +1,15 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 // import { FormsModule } from "@angular/forms";
 
-import { AppRoutingModule } from "./app-routing.module";
+import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent } from "./app.component";
-import { GalleryComponent } from "./gallery/gallery.component";
-import { QuizComponent } from "./quiz/quiz.component";
-import { InfoComponent } from "./info/info.component";
-import { DefaultComponent } from "./default/default.component";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AppComponent } from './app.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { InfoComponent } from './info/info.component';
+import { DefaultComponent } from './default/default.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   //can add additional modules from Angular Materials here
   MatMenuModule,
@@ -21,10 +21,19 @@ import {
   MatExpansionModule,
   MatToolbarModule,
   MatIconModule
-} from "@angular/material";
-import { QuestionsComponent } from "./quiz/questions/questions.component";
-import { ProgressSpinnerService } from "./progress-spinner.service";
-import { ResultComponent } from "./quiz/result/result.component";
+} from '@angular/material';
+import {
+  Headers,
+  HttpModule,
+  Request,
+  RequestOptions,
+  Response
+} from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { QuestionsComponent } from './quiz/questions/questions.component';
+import { ProgressSpinnerService } from './progress-spinner.service';
+import { ResultComponent } from './quiz/result/result.component';
+import { APIService } from './api.service';
 
 @NgModule({
   declarations: [
@@ -50,9 +59,10 @@ import { ResultComponent } from "./quiz/result/result.component";
     MatListModule,
     MatExpansionModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    HttpModule
   ],
-  providers: [ProgressSpinnerService],
+  providers: [ProgressSpinnerService, APIService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,45 +1,45 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { GalleryComponent } from "./gallery/gallery.component";
-import { QuizComponent } from "./quiz/quiz.component";
-import { InfoComponent } from "./info/info.component";
-import { DefaultComponent } from "./default/default.component";
-import { QuestionsComponent } from "./quiz/questions/questions.component";
-import { ResultComponent } from "./quiz/result/result.component";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { GalleryComponent } from './gallery/gallery.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { InfoComponent } from './info/info.component';
+import { DefaultComponent } from './default/default.component';
+import { QuestionsComponent } from './quiz/questions/questions.component';
+import { ResultComponent } from './quiz/result/result.component';
 
 const routes: Routes = [
   {
-    path: "quiz/question/:questionId",
+    path: 'quiz/question/:questionId',
     component: QuestionsComponent
   },
   {
-    path: "quiz/question",
+    path: 'quiz/question',
     component: QuestionsComponent
   },
   {
-    path: "quiz",
+    path: 'quiz',
     component: QuizComponent
   },
   {
-    path: "gallery",
+    path: 'gallery',
     component: GalleryComponent
   },
 
   {
-    path: "info",
+    path: 'info',
     component: InfoComponent
   },
   {
-    path: "",
+    path: '',
     component: DefaultComponent,
-    pathMatch: "full"
+    pathMatch: 'full'
   },
   {
-    path: "result",
+    path: 'result',
     component: ResultComponent
   },
   {
-    path: "**",
+    path: '**',
     component: DefaultComponent
   }
 ];
