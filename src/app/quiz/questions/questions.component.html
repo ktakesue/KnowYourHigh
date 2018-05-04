@@ -1,6 +1,6 @@
 <h2 class="question">{{question.question}}</h2>
 <mat-radio-group>
-  <mat-radio-button color="warn" *ngFor="let answer of question.answers" [value]="answer">
+  <mat-radio-button color="warn" *ngFor="let answer of question.answers; let i = index" [value]="answer" (change)="handleChange(i)">
     {{answer.answer}}
   </mat-radio-button>
 </mat-radio-group>

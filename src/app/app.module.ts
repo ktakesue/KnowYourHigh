@@ -31,6 +31,7 @@ import {
 
 import { ProgressSpinnerService } from "./progress-spinner.service";
 import { QuizService } from "./quiz/quiz.service";
+import { AnswersService } from "./quiz/answers.service";
 
 @NgModule({
   declarations: [
@@ -62,7 +63,7 @@ import { QuizService } from "./quiz/quiz.service";
     MatToolbarModule,
     MatIconModule
   ],
-  providers: [ProgressSpinnerService, QuizService],
+  providers: [ProgressSpinnerService, QuizService, AnswersService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

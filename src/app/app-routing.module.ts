@@ -9,12 +9,21 @@ import { ResultComponent } from "./quiz/result/result.component";
 
 const routes: Routes = [
   {
+    path: "",
+    component: DefaultComponent,
+    pathMatch: "full"
+  },
+  {
     path: "quiz/question/:questionId",
     component: QuestionsComponent
   },
   {
     path: "quiz/question",
     redirectTo: "quiz/question/1"
+  },
+  {
+    path: "quiz/result",
+    component: ResultComponent
   },
   {
     path: "quiz",
@@ -29,15 +38,7 @@ const routes: Routes = [
     path: "info",
     component: InfoComponent
   },
-  {
-    path: "",
-    component: DefaultComponent,
-    pathMatch: "full"
-  },
-  {
-    path: "result",
-    component: ResultComponent
-  },
+
   {
     path: "**",
     component: DefaultComponent
