@@ -1,6 +1,6 @@
 <div class="quiz">
   <h2 class="question">{{question.question}}</h2>
-  <div class="image">
+  <div class="image" *ngIf="question.image">
     <img src="{{question.image}}">
   </div>
   <mat-radio-group>

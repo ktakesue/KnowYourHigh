@@ -135,19 +135,25 @@ export class QuizService {
     },
     {
       questionId: 8,
-      question: "Wh",
+      question: "How does this picture make you feel?",
+      image:
+        "https://www.rd.com/wp-content/uploads/2018/02/16_Adorable-Puppy-Pictures-that-Will-Make-You-Melt_507959740_Utekhina-Anna-760x506.jpg",
       answers: [
         {
-          answer: "an artistic genius who needs more recognition",
-          points: 3
+          answer: "SOO CUTE!!! OMG I WANNA DIE!!",
+          points: 8
         },
         {
-          answer: "my spirit animal",
+          answer: "i'm literally crying",
           points: 6
         },
         {
-          answer: "my dad",
-          points: 9
+          answer: "they're cute... i guess?",
+          points: 2
+        },
+        {
+          answer: "*heart eyes* *hearts everywhere*",
+          points: 4
         }
       ]
     }

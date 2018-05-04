@@ -1,14 +1,15 @@
 .quiz {
   margin-left: 10px;
 }
+
 .question {
   font-size: 40px;
   margin-bottom: 0px;
 }
 
 img {
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 25%;
 }
 
 mat-radio-group {
@@ -20,6 +21,6 @@ mat-radio-button {
   margin: 5px;
   font-size: 30px;
   &:hover {
-    color: #19ff81;
+    color: rgb(0, 255, 0);
   }
 }
