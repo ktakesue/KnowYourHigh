@@ -28,6 +28,16 @@ import {
   MatToolbarModule,
   MatIconModule
 } from "@angular/material";
+import {
+  Headers,
+  HttpModule,
+  Request,
+  RequestOptions,
+  Response
+} from "@angular/http";
+
+import { HttpClientModule } from "@angular/common/http";
+import { APIService } from "./api.service";
 
 import { ProgressSpinnerService } from "./progress-spinner.service";
 import { QuizService } from "./quiz/quiz.service";
@@ -61,9 +71,10 @@ import { AnswersService } from "./quiz/answers.service";
     MatListModule,
     MatExpansionModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    HttpModule
   ],
-  providers: [ProgressSpinnerService, QuizService, AnswersService],
+  providers: [ProgressSpinnerService, QuizService, AnswersService, APIService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

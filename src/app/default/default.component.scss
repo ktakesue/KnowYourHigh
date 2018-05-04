@@ -6,11 +6,19 @@ $Leaf-color: #008023;
 
 body {
   font-family: $Poppin-font;
+  display: grid;
+  grid-template-columns: 1;
+  justify-content: left;
 }
 
+#wrapper {
+  column-span: all;
+}
 h2,
 h1 {
   color: white;
+  width: 100%;
+  margin-left: 10px;
 }
 p {
   color: $darkgr-color;

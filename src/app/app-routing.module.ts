@@ -38,7 +38,6 @@ const routes: Routes = [
     path: "info",
     component: InfoComponent
   },
-
   {
     path: "**",
     component: DefaultComponent
