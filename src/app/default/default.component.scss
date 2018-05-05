@@ -3,16 +3,20 @@
 $Poppin-font: 'Poppins', sans-serif;
 $darkgr-color: #015527;
 $Leaf-color: #008023;
+$darker-grey: #212121;
+$lighter-grey: #303030;
 
 body {
   font-family: $Poppin-font;
   display: grid;
-  grid-template-columns: 1;
-  justify-content: left;
+  grid-template-columns: 1fr;
+
+  justify-items: center;
 }
 
 #wrapper {
   display: block;
+  width: 100%;
 }
 h2,
 h1 {
@@ -21,18 +25,23 @@ h1 {
   margin-left: 10px;
 }
 p {
-  color: $darkgr-color;
+  color: $Leaf-color;
   font-size: 24px;
 }
 
-#mat-expansion-panel-header-0 {
+#mat-expansion-panel-header {
   background-color: white;
 }
 
 .header {
-  background-color: white;
+  background-color: $darker-grey;
 }
 
 .header-text {
   font-size: 27px;
+  color: white;
+}
+button {
+  color: black;
+  background-color: black;
 }
