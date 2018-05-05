@@ -1,17 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json'
-  })
-};
+import { Http, Response, HttpModule } from '@angular/http';
 
 @Injectable()
 export class APIService {
+  data: any = {};
   constructor(private http: HttpClient) {}
-  //   getSeedCo() {
-  //     return this.http.get('http://api.otreeba.com/v1/seed-companies');
-  //   }
+
+  get(something: string) {
+    return this.http.get(`https://kushy.net/api/v3/${something}`);
+  }
 }

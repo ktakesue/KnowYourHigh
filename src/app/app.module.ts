@@ -1,17 +1,17 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { AppRoutingModule } from "./app-routing.module";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent } from "./app.component";
-import { GalleryComponent } from "./gallery/gallery.component";
-import { QuizComponent } from "./quiz/quiz.component";
-import { InfoComponent } from "./info/info.component";
-import { DefaultComponent } from "./default/default.component";
-import { ResultComponent } from "./quiz/result/result.component";
-import { QuestionsComponent } from "./quiz/questions/questions.component";
+import { AppComponent } from './app.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { InfoComponent } from './info/info.component';
+import { DefaultComponent } from './default/default.component';
+import { ResultComponent } from './quiz/result/result.component';
+import { QuestionsComponent } from './quiz/questions/questions.component';
 
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   //can add additional modules from Angular Materials here
   MatMenuModule,
@@ -25,21 +25,26 @@ import {
   MatListModule,
   MatExpansionModule,
   MatToolbarModule,
-  MatIconModule
-} from "@angular/material";
+  MatIconModule,
+  MatCardModule,
+  MatSelectModule
+} from '@angular/material';
 import {
   Headers,
   HttpModule,
   Request,
   RequestOptions,
   Response
-} from "@angular/http";
+} from '@angular/http';
+import { CommonModule } from '@angular/common';
+import { FormControl, Validators } from '@angular/forms';
 
-import { HttpClientModule } from "@angular/common/http";
-import { APIService } from "./api.service";
-import { ProgressSpinnerService } from "./progress-spinner.service";
-import { QuizService } from "./quiz/quiz.service";
-import { AnswersService } from "./quiz/answers.service";
+import { HttpClientModule } from '@angular/common/http';
+import { APIService } from './api.service';
+
+import { ProgressSpinnerService } from './progress-spinner.service';
+import { QuizService } from './quiz/quiz.service';
+import { AnswersService } from './quiz/answers.service';
 
 @NgModule({
   declarations: [
@@ -61,16 +66,20 @@ import { AnswersService } from "./quiz/answers.service";
     MatMenuModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    MatCardModule,
     MatRadioModule,
     MatRippleModule,
     MatButtonModule,
     MatDividerModule,
     MatTooltipModule,
     MatListModule,
+    MatSelectModule,
     MatExpansionModule,
     MatToolbarModule,
     MatIconModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule,
+    CommonModule
   ],
   providers: [ProgressSpinnerService, QuizService, AnswersService, APIService],
   bootstrap: [AppComponent]
