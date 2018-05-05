@@ -12,6 +12,7 @@ import { AnswersService } from "../answers.service";
 export class QuestionsComponent implements OnInit {
   question: Question;
   points: Answer["points"];
+  selectedAnswers = [];
 
   constructor(
     private quizService: QuizService,
@@ -24,24 +25,32 @@ export class QuestionsComponent implements OnInit {
     });
   }
 
-  submitAnswer() {
+  handleChange(points: number) {
+    this.points = points;
+    // console.log("points", points);
+  }
+
+  nextQuestion() {
     console.log("your answer's points: ", this.points);
     const nextQuestionId = this.question.questionId + 1;
     this.router.navigateByUrl(`quiz/question/${nextQuestionId}`);
-    // const selectedAnswers = [];
-    // selectedAnswers.push(this.points);
-    // console.log("selectedAnswers", selectedAnswers);
   }
 
-  handleChange(points: number) {
-    this.points = points;
-    console.log("points", points);
+  submitAnswer() {
+    this.selectedAnswers.push(this.points);
+    console.log("SUBMITTED ANSWERS :", this.selectedAnswers);
   }
 
   prevQuestion() {
     console.log("go back bruh", this.points);
     const prevQuestionId = this.question.questionId - 1;
     this.router.navigateByUrl(`quiz/question/${prevQuestionId}`);
+  }
+
+  undoAnswer() {
+    const index = this.selectedAnswers.indexOf(this.points);
+    this.selectedAnswers.splice(index, 1);
+    console.log("UNDO ANSWERS :", this.selectedAnswers);
   }
 
   goBack() {
