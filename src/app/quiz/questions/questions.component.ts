@@ -17,7 +17,7 @@ export class QuestionsComponent implements OnInit {
   constructor(
     private quizService: QuizService,
     private activatedRoute: ActivatedRoute,
-    public answersService: AnswersService,
+    private answersService: AnswersService,
     private router: Router
   ) {
     this.activatedRoute.params.subscribe(value => {
@@ -51,6 +51,12 @@ export class QuestionsComponent implements OnInit {
     const index = this.selectedAnswers.indexOf(this.points);
     this.selectedAnswers.splice(index, 1);
     console.log("UNDO ANSWERS :", this.selectedAnswers);
+  }
+
+  calculateResult() {
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    console.log("YOUR RESULT :", this.selectedAnswers.reduce(reducer, 0));
+    this.router.navigateByUrl("quiz/result");
   }
 
   goBack() {
