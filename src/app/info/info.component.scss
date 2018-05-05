@@ -12,9 +12,26 @@ h1 {
   color: white;
 }
 
+h2 {
+  background-color: black;
+  color: white;
+  margin: 5px;
+  padding: 5px;
+}
 .form-field {
+  background-color: black;
+  margin: 5px;
+  display: block;
+}
+.mat-input-wrapper {
+  padding: 2px 2px 2px 2px;
+  margin: 10px;
   background-color: $darker-grey;
 }
+.mat-select-value {
+  margin: 5px;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -48,18 +65,81 @@ h1 {
   background-color: black;
 }
 
-.search {
-  display: block;
-  background-color: $darker-grey;
-  padding: 2px 2px 2px 2px;
-}
-.mat-input-wrapper {
-  padding: 2px 2px 2px 2px;
-}
 .card {
   background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.image {
+  padding: 10px;
+  align-self: center;
+  margin: 10px;
 }
 
-.img {
-  justify-self: center;
+.button {
+  grid-column: 1;
+  grid-row: 1 2;
+  text-align: center;
+  margin: 10px;
+  user-select: none;
+  display: inline-block;
+  border: 0.2em solid;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0.6;
+  color: $darker-grey;
+  text-transform: uppercase;
+  font-size: 25px;
+  &__text {
+    display: block;
+    padding: 1em 2em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $darker-grey;
+    &:before {
+      content: attr(title);
+    }
+    &--bis {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: translateX(-1 * $anim-text-offset);
+      color: $darker-grey;
+      opacity: 100%;
+    }
+  }
+  &--mask {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    transform: translateX(-100%) rotate(45deg);
+    transition: all 0.3s;
+  }
+}
+
+.button:hover {
+  opacity: 1;
+  .button__text {
+    animation: fx-text 0.3s ease-out;
+    &--bis {
+      animation: fx-text-bis 0.3s ease-out;
+    }
+  }
+  .button__mask {
+    animation: fx-mask 0.3s ease-out;
+  }
+}
+
+.button:active {
+  opacity: 1;
+  background: white;
+  color: inherit;
 }

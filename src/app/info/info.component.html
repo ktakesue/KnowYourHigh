@@ -3,7 +3,7 @@
 </div>
 <div id='searchBox'>
   <input name="title" #searchTerm>
-  <button (click)="searchAPI(searchTerm)">Search</button>
+  <button class="button" (click)="searchAPI(searchTerm)">Search</button>
 </div>
 
 <mat-form-field class="form-field">
@@ -14,9 +14,9 @@
     <mat-option value="brands">Brands</mat-option>
   </mat-select>
 </mat-form-field>
-<div class="search">
+<!-- <div class="search">
   <p>You are searching: {{selected}}</p>
-</div>
+</div> -->
 
 <!-- <mat-form-field class="form-field">
   <mat-select placeholder="State" *ngIf="selected==='shops'">
@@ -27,16 +27,18 @@
 <h2> You are searching within: {{state}}</h2> -->
 
 
-<!-- ngIf conditional -->
+
 <div class=' card '>
   <ng-container *ngFor='let call of data.data '>
     <h2> {{call.name}}</h2>
-    <!-- <img src='{{seedco.image}} '>  -->
+    <!-- <img src='{{call.featured_img}}'> -->
   </ng-container>
 </div>
 <h2>
   There are 3 types of Cannabis:
 </h2>
+
+
 <div class="wrapper">
   <mat-card class="indica">
     <mat-card-header>
@@ -44,7 +46,9 @@
       <mat-card-title>Indica</mat-card-title>
       <mat-card-subtitle>Body High</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="indica.9af9943b29d88e716c16.jpg" alt="">
+    <div class="image">
+      <img mat-card-image src="indica.9af9943b29d88e716c16.jpg" alt="">
+    </div>
     <mat-card-content>
       <p>
         The effects produced by Indica strains are very relaxing and narcotic-like, typically providing a full-body, or “couch-locked”
@@ -61,7 +65,9 @@
       <mat-card-title>Sativa</mat-card-title>
       <mat-card-subtitle>Mind High</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="sativa.65779a22bee2f711893d.jpg" alt="">
+    <div class="image">
+      <img mat-card-image src="sativa.65779a22bee2f711893d.jpg" alt="">
+    </div>
     <mat-card-content>
       <p>
         Sativa strains are known to produce an uplifting and cerebral high that is typically very energizing and stimulating. Sativa
@@ -79,10 +85,12 @@
       <mat-card-title>Hybrid</mat-card-title>
       <mat-card-subtitle>EVERYTHING</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="hybrid.b4ce3925e2cb55cb1600.jpg" alt="">
+    <div class="image">
+      <img mat-card-image src="hybrid.b4ce3925e2cb55cb1600.jpg" alt="">
+    </div>
     <mat-card-content>
       <p>
-
+        EEEEEEEEeEEEEeEEEE
       </p>
     </mat-card-content>
   </mat-card>
