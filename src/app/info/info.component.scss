@@ -18,6 +18,8 @@ h1 {
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  background-color: black;
 }
 .indica-header-image {
   background-image: url('./indica.jpg');
@@ -39,10 +41,11 @@ h1 {
   justify-self: center;
 }
 
-.indica-mat-card,
-.sativa-mat-card,
-.hybrid-mat-card {
+.indica,
+.sativa,
+.hybrid {
   justify-self: center;
+  background-color: black;
 }
 
 .search {
@@ -55,4 +58,8 @@ h1 {
 }
 .card {
   background-color: white;
+}
+
+.img {
+  justify-self: center;
 }

@@ -74,7 +74,7 @@ export class InfoComponent {
     this.subscription = this.APIService.getbyCat(this.selected).subscribe(
       data => {
         console.log(data);
-        //   this.data = data;
+        this.data = data;
       }
     );
   }

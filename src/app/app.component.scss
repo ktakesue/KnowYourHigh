@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
 
 $anim-text-offset: 1em;
 $Poppin-font: 'Poppins', sans-serif;
@@ -13,4 +13,8 @@ img {
 
 h1 {
   font-size: 25px;
+  font-family: $Poppin-font;
+}
+#toolbar {
+  background-color: $darker-grey;
 }
