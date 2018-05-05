@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { PHOTOS } from 'assets/galleryphotos';
-import { ProgressSpinnerService } from '../progress-spinner.service';
 
 @Component({
   selector: 'kt-gallery',

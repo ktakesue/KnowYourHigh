@@ -15,7 +15,10 @@ h1 {
 .form-field {
   background-color: $darker-grey;
 }
-
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 .indica-header-image {
   background-image: url('./indica.jpg');
   background-size: cover;
@@ -29,4 +32,27 @@ h1 {
 .hybrid-header-image {
   background-image: url('./hybrid.jpg');
   background-size: cover;
+}
+
+.mat-card-image {
+  max-width: 200px;
+  justify-self: center;
+}
+
+.indica-mat-card,
+.sativa-mat-card,
+.hybrid-mat-card {
+  justify-self: center;
+}
+
+.search {
+  display: block;
+  background-color: $darker-grey;
+  padding: 2px 2px 2px 2px;
+}
+.mat-input-wrapper {
+  padding: 2px 2px 2px 2px;
+}
+.card {
+  background-color: white;
 }

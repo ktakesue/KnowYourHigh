@@ -14,71 +14,79 @@
     <mat-option value="brands">Brands</mat-option>
   </mat-select>
 </mat-form-field>
+<div class="search">
+  <p>You are searching: {{selected}}</p>
+</div>
 
-<p>You are searching: {{selected}}</p>
+<!-- <mat-form-field class="form-field">
+  <mat-select placeholder="State" *ngIf="selected==='shops'">
+    <mat-option>All</mat-option>
+    <mat-option *ngFor="let state of states" [value]="state"></mat-option>
+  </mat-select>
+</mat-form-field>
+<h2> You are searching within: {{state}}</h2> -->
 
+
+<!-- ngIf conditional -->
+<div class=' card '>
+  <ng-container *ngFor='let call of data.data '>
+    <h2> {{call.name}}</h2>
+    <!-- <img src='{{seedco.image}} '>  -->
+  </ng-container>
+</div>
 <h2>
   There are 3 types of Cannabis:
 </h2>
+<div class="wrapper">
+  <mat-card class="indica">
+    <mat-card-header>
+      <div mat-card-avatar class="indica-header-image"></div>
+      <mat-card-title>Indica</mat-card-title>
+      <mat-card-subtitle>Body High</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="indica.9af9943b29d88e716c16.jpg" alt="">
+    <mat-card-content>
+      <p>
+        The effects produced by Indica strains are very relaxing and narcotic-like, typically providing a full-body, or “couch-locked”
+        effect. Indica are perfect for those days spent curled up on the couch watching TV, or surfing the web. However,
+        most people seek Cannabis Indica after a long day at work to relieve stress, provide full-body pain relief, and help
+        them fall asleep at night.
+      </p>
+    </mat-card-content>
+  </mat-card>
 
-<!-- ngIf conditional -->
-<div class='card'>
-  <ng-container *ngFor='let strainName of data.data'>
-    <h2> {{strainName.name}}</h2>
-    <!-- <img src='{{seedco.image}}'>  -->
-  </ng-container>
+  <mat-card class="sativa">
+    <mat-card-header>
+      <div mat-card-avatar class="sativa-header-image"></div>
+      <mat-card-title>Sativa</mat-card-title>
+      <mat-card-subtitle>Mind High</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="sativa.65779a22bee2f711893d.jpg" alt="">
+    <mat-card-content>
+      <p>
+        Sativa strains are known to produce an uplifting and cerebral high that is typically very energizing and stimulating. Sativa
+        are known to make you laugh uncontrollably or engage in in-depth conversations about the meaning of life. These strains
+        typically cause you to analyze the human experience and think creatively, which makes Cannabis Sativa very popular
+        among philosophers, artists and musicians. Some Sativa even have been found to enhance lights and sounds, making
+        music, movies, and the rest of your surroundings more vibrant than ever before.
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="hybrid">
+    <mat-card-header>
+      <div mat-card-avatar class="hybrid-header-image"></div>
+      <mat-card-title>Hybrid</mat-card-title>
+      <mat-card-subtitle>EVERYTHING</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="hybrid.b4ce3925e2cb55cb1600.jpg" alt="">
+    <mat-card-content>
+      <p>
+
+      </p>
+    </mat-card-content>
+  </mat-card>
 </div>
-
-
-<mat-card class="indica">
-  <mat-card-header>
-    <div mat-card-avatar class="indica-header-image"></div>
-    <mat-card-title>Indica</mat-card-title>
-    <mat-card-subtitle>Body High</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="indica.jpg" alt="">
-  <mat-card-content>
-    <p>
-      The effects produced by Indica strains are very relaxing and narcotic-like, typically providing a full-body, or “couch-locked”
-      effect. Indica are perfect for those days spent curled up on the couch watching TV, or surfing the web. However, most
-      people seek Cannabis Indica after a long day at work to relieve stress, provide full-body pain relief, and help them
-      fall asleep at night.
-    </p>
-  </mat-card-content>
-</mat-card>
-
-<mat-card class="sativa">
-  <mat-card-header>
-    <div mat-card-avatar class="sativa-header-image"></div>
-    <mat-card-title>Sativa</mat-card-title>
-    <mat-card-subtitle>Mind High</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="sativa.jpg" alt="">
-  <mat-card-content>
-    <p>
-      Sativa strains are known to produce an uplifting and cerebral high that is typically very energizing and stimulating. Sativa
-      are known to make you laugh uncontrollably or engage in in-depth conversations about the meaning of life. These strains
-      typically cause you to analyze the human experience and think creatively, which makes Cannabis Sativa very popular
-      among philosophers, artists and musicians. Some Sativa even have been found to enhance lights and sounds, making music,
-      movies, and the rest of your surroundings more vibrant than ever before.
-    </p>
-  </mat-card-content>
-</mat-card>
-
-<mat-card class="hybrid">
-  <mat-card-header>
-    <div mat-card-avatar class="hybrid-header-image"></div>
-    <mat-card-title>Hybrid</mat-card-title>
-    <mat-card-subtitle>EVERYTHING</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="hybrid.jpp" alt="">
-  <mat-card-content>
-    <p>
-
-    </p>
-  </mat-card-content>
-</mat-card>
-
 
 <br>
 <br>

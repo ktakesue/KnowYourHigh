@@ -15,8 +15,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   //can add additional modules from Angular Materials here
   MatMenuModule,
-  MatProgressSpinnerModule,
-  MatProgressBarModule,
   MatRadioModule,
   MatRippleModule,
   MatButtonModule,
@@ -29,6 +27,7 @@ import {
   MatCardModule,
   MatSelectModule
 } from '@angular/material';
+import { MatInputModule } from '@angular/material/input';
 import {
   Headers,
   HttpModule,
@@ -42,7 +41,6 @@ import { FormControl, Validators } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { APIService } from './api.service';
 
-import { ProgressSpinnerService } from './progress-spinner.service';
 import { QuizService } from './quiz/quiz.service';
 import { AnswersService } from './quiz/answers.service';
 
@@ -64,8 +62,6 @@ import { AnswersService } from './quiz/answers.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    MatProgressSpinnerModule,
-    MatProgressBarModule,
     MatCardModule,
     MatRadioModule,
     MatRippleModule,
@@ -79,9 +75,10 @@ import { AnswersService } from './quiz/answers.service';
     MatIconModule,
     HttpModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    MatInputModule
   ],
-  providers: [ProgressSpinnerService, QuizService, AnswersService, APIService],
+  providers: [QuizService, AnswersService, APIService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

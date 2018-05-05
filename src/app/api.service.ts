@@ -8,7 +8,13 @@ export class APIService {
   data: any = {};
   constructor(private http: HttpClient) {}
 
-  get(something: string) {
+  getbyCat(something: string) {
     return this.http.get(`https://kushy.net/api/v3/${something}`);
+  }
+
+  filterSearch(something: string, something2: string) {
+    return this.http.get(
+      `https://kushy.net/api/v3/${something}/?filters[name][contains]=${something2}`
+    );
   }
 }
