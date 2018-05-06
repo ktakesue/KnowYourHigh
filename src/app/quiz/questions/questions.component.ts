@@ -6,18 +6,16 @@ import { AnswersService } from "../answers.service";
 @Component({
   selector: "kt-questions",
   templateUrl: "./questions.component.html",
-  styleUrls: ["./questions.component.scss"],
-  providers: [QuizService, AnswersService]
+  styleUrls: ["./questions.component.scss"]
 })
 export class QuestionsComponent implements OnInit {
   question: Question;
   points: Answer["points"];
-  selectedAnswers = [];
 
   constructor(
     private quizService: QuizService,
     private activatedRoute: ActivatedRoute,
-    public answersService: AnswersService,
+    private answersService: AnswersService,
     private router: Router
   ) {
     this.activatedRoute.params.subscribe(value => {
@@ -27,7 +25,6 @@ export class QuestionsComponent implements OnInit {
 
   handleChange(points: number) {
     this.points = points;
-    // console.log("points", points);
   }
 
   nextQuestion() {
@@ -36,9 +33,9 @@ export class QuestionsComponent implements OnInit {
     this.router.navigateByUrl(`quiz/question/${nextQuestionId}`);
   }
 
-  submitAnswer() {
-    this.selectedAnswers.push(this.points);
-    console.log("SUBMITTED ANSWERS :", this.selectedAnswers);
+  submitAnswer(questionId: number, points: number) {
+    this.answersService.setAnswer(this.question.questionId, this.points);
+    console.log("SUBMITTED ANSWERS :", this.answersService.selectedAnswers);
   }
 
   prevQuestion() {
@@ -47,10 +44,16 @@ export class QuestionsComponent implements OnInit {
     this.router.navigateByUrl(`quiz/question/${prevQuestionId}`);
   }
 
-  undoAnswer() {
-    const index = this.selectedAnswers.indexOf(this.points);
-    this.selectedAnswers.splice(index, 1);
-    console.log("UNDO ANSWERS :", this.selectedAnswers);
+  // undoAnswer() {
+  //   const index = this.selectedAnswers.indexOf(this.points);
+  //   this.selectedAnswers.splice(index, 1);
+  //   console.log("UNDO ANSWERS :", this.selectedAnswers);
+  // }
+
+  calculateResult() {
+    this.answersService.calculateTotal();
+    this.router.navigateByUrl("quiz/result");
+    // console.log("SUBMITTED ANSWERS :", this.answersService.selectedAnswers);
   }
 
   goBack() {

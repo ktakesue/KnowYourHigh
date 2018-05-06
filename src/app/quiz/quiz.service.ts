@@ -156,6 +156,47 @@ export class QuizService {
           points: 4
         }
       ]
+    },
+    {
+      questionId: 9,
+      question: "PICK A NUMBER",
+      answers: [
+        {
+          answer: "69 (Real Mature)",
+          points: 2
+        },
+        {
+          answer: "666 (what's wrong with you?)",
+          points: 4
+        },
+        {
+          answer: "420 !! 420 !! 420 !!",
+          points: 6
+        },
+        {
+          answer: "Snoop Dogg",
+          points: 8
+        }
+      ]
+    },
+    {
+      questionId: 10,
+      question:
+        "WELL i'm impressed you're still taking this quiz. i mean, you either have no life, or you're not THAT high",
+      answers: [
+        {
+          answer: "stop judging me, you dick",
+          points: 4
+        },
+        {
+          answer: "yes",
+          points: 8
+        },
+        {
+          answer: "i'm hungry, is this quiz done yet?",
+          points: 6
+        }
+      ]
     }
   ];
 }
