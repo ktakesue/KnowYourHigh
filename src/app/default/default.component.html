@@ -2,14 +2,16 @@
 <html>
 
 <body>
-  <div style="text-align:center">
+  <div style="text-align:center" class="title">
     <h1>
       Welcome to the {{ title }} App!
     </h1>
 
   </div>
   <div id='wrapper'>
-    <h2>Here are some links to help you start: </h2>
+    <div class="holder">
+      <h2>Here are some links to help you start: </h2>
+    </div>
     <div id='list'>
       <mat-accordion>
         <mat-expansion-panel class="header">
@@ -18,7 +20,7 @@
               <a routerLink="/quiz" class="header-text" style=" text-decoration:none">Are You High?</a>
             </mat-panel-title>
           </mat-expansion-panel-header>
-          <p>Are you sure? Take the quiz</p>
+          <p color="accent">Are you sure? Take the quiz</p>
         </mat-expansion-panel>
         <mat-divider></mat-divider>
         <mat-expansion-panel class="header">

@@ -1,11 +1,28 @@
 <div id='container'>
-    <img src="{{photos[(counter$ | async )]}}" id="image">
 
-    <h1> Dis is Image</h1>
-    <button (click)="button$.next(-1)" id="button">
-        <- </button>
-            <button (click)="button$.next(1)" id="button">-></button>
-            <br>
-            <br>
-            <a routerLink="" class="nav-text" style=" text-decoration:none">Let's Go Back</a>
+    <img src="{{photos[(counter$ | async )]}}" id="image">
+    <div class="wrapper">
+        <h1> Dis is Image</h1>
+    </div>
+    <button (click)="button$.next(-1)" id="button"> Previous
+    </button>
+    <button (click)="button$.next(1)" id="button">Next</button>
+    <br>
+    <br>
+
+    <mat-accordion>
+        <mat-expansion-panel class="header">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <h2>Click for Bob Ross </h2>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/lLWEXRAnQd0?rel=0" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
+
+
+        </mat-expansion-panel>
+    </mat-accordion>
+    <a routerLink="" class="nav-text" style=" text-decoration:none">Let's Go Back</a>
+
 </div>

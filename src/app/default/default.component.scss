@@ -10,19 +10,24 @@ body {
   font-family: $Poppin-font;
   display: grid;
   grid-template-columns: 1fr;
-
+  grid-template-rows: 1fr;
   justify-items: center;
 }
 
 #wrapper {
   display: block;
   width: 100%;
+  height: 100%;
 }
+
 h2,
 h1 {
   color: white;
   width: 100%;
   margin-left: 10px;
+}
+.title {
+  display: inline;
 }
 p {
   color: $Leaf-color;

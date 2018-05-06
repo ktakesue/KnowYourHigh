@@ -1,6 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit
+  // ViewEncapsulation,
+  // ViewChild,
+  // ElementRef,
+  // PipeTransform,
+  // Pipe
+} from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 import { PHOTOS } from 'assets/galleryphotos';
+// import { DomSanitizer } from '@angular/platform-browser';
+
+// @Pipe({ name: 'safe' })
+// export class SafePipe implements PipeTransform {
+//   constructor(private sanitizer: DomSanitizer) {}
+//   transform(url) {
+//     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+//   }
+// }
+import { EmbedVideoService } from 'ngx-embed-video';
 
 @Component({
   selector: 'kt-gallery',
@@ -13,9 +31,11 @@ export class GalleryComponent implements OnInit {
   TOTAL = PHOTOS.length;
   button$ = new Subject();
   counter$: Observable<any>;
-
-  constructor() // private http: Http, private ProgressSpinnerService: ProgressSpinnerService
-  {
+  iframe_html: any;
+  videoUrl = 'https://www.youtube.com/watch?v=lLWEXRAnQd0&t=0s&index=1&list=PLAEQD0ULngi67rwmhrkNjMZKvyCReqDV4';
+  constructor(
+    private embedService: EmbedVideoService // private http: Http, private ProgressSpinnerService: ProgressSpinnerService
+  ) {
     //     this.ProgressSpinnerService.spinnerActive.subscribe(active =>
     //       this.toggleSpinner(active))
     //     }
@@ -23,6 +43,8 @@ export class GalleryComponent implements OnInit {
     //     console.log('inside toggle spinner')
     //     this.spinnerActive = active
     // }
+    this.iframe_html = this.embedService.embed(this.videoUrl);
+
     this.counter$ = Observable.merge(
       this.button$,
       Observable.interval(10000).mapTo(1)

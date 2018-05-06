@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -10,7 +10,7 @@ import { InfoComponent } from './info/info.component';
 import { DefaultComponent } from './default/default.component';
 import { ResultComponent } from './quiz/result/result.component';
 import { QuestionsComponent } from './quiz/questions/questions.component';
-
+import { EmbedVideo } from 'ngx-embed-video';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   //can add additional modules from Angular Materials here
@@ -76,7 +76,8 @@ import { AnswersService } from './quiz/answers.service';
     HttpModule,
     HttpClientModule,
     CommonModule,
-    MatInputModule
+    MatInputModule,
+    EmbedVideo.forRoot()
   ],
   providers: [QuizService, AnswersService, APIService],
   bootstrap: [AppComponent]
