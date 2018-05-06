@@ -13,9 +13,9 @@ export class ResultComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private answersService: AnswersService
-  ) {}
-
-  result = this.answersService.getResults();
+  ) {
+    this.answersService.getResults();
+  }
 
   ngOnInit() {}
 }

@@ -19,5 +19,6 @@ export class AnswersService {
       0
     );
     console.log("result", result);
+    return result;
   }
 }
