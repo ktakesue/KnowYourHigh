@@ -6,8 +6,7 @@ import { AnswersService } from "../answers.service";
 @Component({
   selector: "kt-questions",
   templateUrl: "./questions.component.html",
-  styleUrls: ["./questions.component.scss"],
-  providers: [QuizService, AnswersService]
+  styleUrls: ["./questions.component.scss"]
 })
 export class QuestionsComponent implements OnInit {
   question: Question;
@@ -52,7 +51,7 @@ export class QuestionsComponent implements OnInit {
   // }
 
   calculateResult() {
-    this.answersService.getResults();
+    this.answersService.calculateTotal();
     this.router.navigateByUrl("quiz/result");
     // console.log("SUBMITTED ANSWERS :", this.answersService.selectedAnswers);
   }
