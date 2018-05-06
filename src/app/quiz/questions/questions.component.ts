@@ -44,16 +44,9 @@ export class QuestionsComponent implements OnInit {
     this.router.navigateByUrl(`quiz/question/${prevQuestionId}`);
   }
 
-  // undoAnswer() {
-  //   const index = this.selectedAnswers.indexOf(this.points);
-  //   this.selectedAnswers.splice(index, 1);
-  //   console.log("UNDO ANSWERS :", this.selectedAnswers);
-  // }
-
   calculateResult() {
     this.answersService.calculateTotal();
     this.router.navigateByUrl("quiz/result");
-    // console.log("SUBMITTED ANSWERS :", this.answersService.selectedAnswers);
   }
 
   goBack() {

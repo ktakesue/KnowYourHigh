@@ -1,7 +1,15 @@
-<h2 class="result">YOUR RESULT :{{answersService.getTotal()}}
-</h2>
+<div class="resultPage" style="text-align:center">
+  <h2>YOUR RESULT: {{answersService.getTotal()}} WEED POINTS
+  </h2>
 
-<h3 *ngIf="total >= 0 && total < 10">{{low}}</h3>
-<h3 *ngIf="total > 10 && total < 20">{{medium}}</h3>
-<h3 *ngIf="total > 20 && total < 30">{{high}}</h3>
-<h3 *ngIf="total > 30">{{tooHigh}}</h3>
+  <h3 *ngIf="total >= 0 && total < 10">TOO LOW: {{tooLow}}</h3>
+  <h3 *ngIf="total > 10 && total < 20">LOW: {{low}}</h3>
+  <h3 *ngIf="total > 20 && total < 30">MEDIUM: {{medium}}</h3>
+  <h3 *ngIf="total > 30 && total < 40">HIGH: {{high}}</h3>
+  <h3 *ngIf="total > 40">TOO HIGH: {{tooHigh}}</h3>
+
+
+  <button (click)="restart()" mat-raised-button color="accent">RESTART</button>
+  <button (click)="goHome()" mat-raised-button color="accent">OR GO HOME</button>
+
+</div>

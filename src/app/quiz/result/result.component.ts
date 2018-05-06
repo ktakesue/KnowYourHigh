@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
 import { AnswersService } from "../answers.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "kt-result",
@@ -9,28 +9,23 @@ import { AnswersService } from "../answers.service";
 })
 export class ResultComponent implements OnInit {
   total: number;
-  low = "YOU AINT THAT HIGH BITCH";
+  tooLow = "YOU AINT EVEN HIGH BITCH, GO SMOKE SOME GREENs";
+  low = "YOU'RE ON KUSH TRAINING WHEELS, BEEF UP!!";
   medium = "YOU'RE a BIT HIGH YOU SHOULD TAKE A BREATHER (not a puff)";
-  high = "DUDE CALM YOUR TITS";
-  tooHigh = "JUST GO TO BED";
+  high = "DUDE CALM YOUR TITS, THEY'RE FALLING OFF";
+  tooHigh = "JUST GO TO FUCKING BED";
 
-  constructor(
-    private activatedRoute: ActivatedRoute,
-    private router: Router,
-    private answersService: AnswersService
-  ) {}
+  constructor(public answersService: AnswersService, private router: Router) {}
+
+  restart() {
+    this.router.navigateByUrl("quiz");
+  }
+
+  goHome() {
+    this.router.navigateByUrl("");
+  }
 
   ngOnInit() {
-    // console.log("HELLLLLOOOO", this.answersService.getTotal());
     this.total = this.answersService.total;
-    // if (this.total >= 0 && this.total < 10) {
-    //   return "YOU AINT THAT HIGH BITCH";
-    // } else if (this.total > 10 && this.total < 20) {
-    //   return "YOU'RE a BIT HIGH YOU SHOULD TAKE A BREATHER (not a puff)";
-    // } else if (this.total > 20 && this.total < 30) {
-    //   return "DUDE CALM YOUR TITS";
-    // } else {
-    //   return "JUST GO TO BED";
-    // }
   }
 }

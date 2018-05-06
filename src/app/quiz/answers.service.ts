@@ -11,7 +11,6 @@ export class AnswersService {
   selectedAnswers = {};
 
   public setAnswer(questionId, points) {
-    // console.log("SET ANSWER", this.selectedAnswers);
     this.selectedAnswers[questionId] = points;
   }
 
@@ -22,24 +21,26 @@ export class AnswersService {
       },
       0
     );
+
     if (result >= 0 && result < 10) {
       console.log("YOU AINT THAT HIGH BITCH", result);
     } else if (result > 10 && result < 20) {
+      console.log("YOU'RE ON KUSH TRAINING WHEELS, BEEF UP!!", result);
+    } else if (result > 20 && result < 30) {
       console.log(
         "YOU'RE a BIT HIGH YOU SHOULD TAKE A BREATHER (not a puff)",
         result
       );
-    } else if (result > 20 && result < 30) {
+    } else if (result > 30 && result < 40) {
       console.log("DUDE CALM YOUR TITS", result);
     } else {
-      console.log("JUST GO TO BED", result);
+      console.log("JUST GO TO FUCKING BED", result);
     }
     this.total = result;
     return result;
   }
 
   public getTotal() {
-    // console.log("Grabbing total", this.total);
     return this.total;
   }
 }
