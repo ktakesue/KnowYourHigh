@@ -12,7 +12,6 @@ import { AnswersService } from "../answers.service";
 export class QuestionsComponent implements OnInit {
   question: Question;
   points: Answer["points"];
-  selectedAnswers = [];
 
   constructor(
     private quizService: QuizService,
@@ -27,7 +26,6 @@ export class QuestionsComponent implements OnInit {
 
   handleChange(points: number) {
     this.points = points;
-    // console.log("points", points);
   }
 
   nextQuestion() {
@@ -36,9 +34,9 @@ export class QuestionsComponent implements OnInit {
     this.router.navigateByUrl(`quiz/question/${nextQuestionId}`);
   }
 
-  submitAnswer() {
-    this.selectedAnswers.push(this.points);
-    console.log("SUBMITTED ANSWERS :", this.selectedAnswers);
+  submitAnswer(questionId: number, points: number) {
+    this.answersService.setAnswer(this.question.questionId, this.points);
+    console.log("SUBMITTED ANSWERS :", this.answersService.selectedAnswers);
   }
 
   prevQuestion() {
@@ -47,16 +45,16 @@ export class QuestionsComponent implements OnInit {
     this.router.navigateByUrl(`quiz/question/${prevQuestionId}`);
   }
 
-  undoAnswer() {
-    const index = this.selectedAnswers.indexOf(this.points);
-    this.selectedAnswers.splice(index, 1);
-    console.log("UNDO ANSWERS :", this.selectedAnswers);
-  }
+  // undoAnswer() {
+  //   const index = this.selectedAnswers.indexOf(this.points);
+  //   this.selectedAnswers.splice(index, 1);
+  //   console.log("UNDO ANSWERS :", this.selectedAnswers);
+  // }
 
   calculateResult() {
-    const reducer = (accumulator, currentValue) => accumulator + currentValue;
-    console.log("YOUR RESULT :", this.selectedAnswers.reduce(reducer, 0));
+    this.answersService.getResults();
     this.router.navigateByUrl("quiz/result");
+    // console.log("SUBMITTED ANSWERS :", this.answersService.selectedAnswers);
   }
 
   goBack() {

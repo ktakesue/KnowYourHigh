@@ -1,15 +1,21 @@
 import { Component, OnInit } from "@angular/core";
-import { QuizService, Question, Answer } from "../quiz.service";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
+import { AnswersService } from "../answers.service";
 
 @Component({
   selector: "kt-result",
   templateUrl: "./result.component.html",
   styleUrls: ["./result.component.scss"],
-  providers: [QuizService]
+  providers: [AnswersService]
 })
 export class ResultComponent implements OnInit {
-  constructor(private quizService: QuizService, private router: Router) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private answersService: AnswersService
+  ) {}
+
+  result = this.answersService.getResults();
 
   ngOnInit() {}
 }

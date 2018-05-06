@@ -13,7 +13,7 @@
   <br>
   <br>
   <button (click)="goBack()" mat-raised-button color="accent" *ngIf="question.questionId === 1">Go Back Home</button>
-  <button (click)="prevQuestion(); undoAnswer();" mat-raised-button color="accent" *ngIf="question.questionId !== 1">Previous Question</button>
+  <button (click)="prevQuestion()" mat-raised-button color="accent" *ngIf="question.questionId !== 1">Previous Question</button>
   <button (click)="nextQuestion(); submitAnswer();" mat-raised-button color="accent" *ngIf="question.questionId < 10">Next Question</button>
   <button (click)="submitAnswer(); calculateResult(); " mat-raised-button color="accent" *ngIf="question.questionId === 10">Calculate Results!</button>
 </div>
