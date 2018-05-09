@@ -2,11 +2,11 @@
   <h2>YOUR RESULT: {{answersService.getTotal()}} WEED POINTS
   </h2>
 
-  <h3 *ngIf="total >= 0 && total < 10">TOO LOW: {{tooLow}}</h3>
-  <h3 *ngIf="total > 10 && total < 20">LOW: {{low}}</h3>
-  <h3 *ngIf="total > 20 && total < 30">MEDIUM: {{medium}}</h3>
-  <h3 *ngIf="total > 30 && total < 40">HIGH: {{high}}</h3>
-  <h3 *ngIf="total > 40">TOO HIGH: {{tooHigh}}</h3>
+  <h3 *ngIf="total >= 0 && total < 10">{{status}} TOO LOW: {{tooLow}}</h3>
+  <h3 *ngIf="total >= 10 && total < 20">{{status}} LOW: {{low}}</h3>
+  <h3 *ngIf="total >= 20 && total < 30">{{status}} MEDIUM: {{medium}}</h3>
+  <h3 *ngIf="total >= 30 && total < 40">{{status}} HIGH: {{high}}</h3>
+  <h3 *ngIf="total >= 40">{{status}} TOO HIGH: {{tooHigh}}</h3>
 
 
   <button (click)="restart()" mat-raised-button color="accent">RESTART</button>

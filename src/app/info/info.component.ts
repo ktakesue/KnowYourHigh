@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { APIService } from '../api.service';
-import 'rxjs/add/operator/map';
-import { Subscription } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from "@angular/core";
+import { APIService } from "../api.service";
+import "rxjs/add/operator/map";
+import { Subscription } from "rxjs";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
-  selector: 'kt-info',
-  templateUrl: './info.component.html',
-  styleUrls: ['./info.component.scss']
+  selector: "kt-info",
+  templateUrl: "./info.component.html",
+  styleUrls: ["./info.component.scss"]
 })
 export class InfoComponent {
   data: any = {};
@@ -16,57 +16,58 @@ export class InfoComponent {
 
   constructor(private APIService: APIService, private http: HttpClient) {}
   states = [
-    'Alabama',
-    'Alaska',
-    'Arizona',
-    'Arkansas',
-    'California',
-    'Colorado',
-    'Connecticut',
-    'Delaware',
-    'Florida',
-    'Georgia',
-    'Hawaii',
-    'Idaho',
-    'Illinois',
-    'Indiana',
-    'Iowa',
-    'Kansas',
-    'Kentucky',
-    'Louisiana',
-    'Maine',
-    'Maryland',
-    'Massachusetts',
-    'Michigan',
-    'Minnesota',
-    'Mississippi',
-    'Missouri',
-    'Montana',
-    'Nebraska',
-    'Nevada',
-    'New Hampshire',
-    'New Jersey',
-    'New Mexico',
-    'New York',
-    'North Carolina',
-    'North Dakota',
-    'Ohio',
-    'Oklahoma',
-    'Oregon',
-    'Pennsylvania',
-    'Rhode Island',
-    'South Carolina',
-    'South Dakota',
-    'Tennessee',
-    'Texas',
-    'Utah',
-    'Vermont',
-    'Virginia',
-    'Washington',
-    'West Virginia',
-    'Wisconsin',
-    'Wyoming'
+    "Alabama",
+    "Alaska",
+    "Arizona",
+    "Arkansas",
+    "California",
+    "Colorado",
+    "Connecticut",
+    "Delaware",
+    "Florida",
+    "Georgia",
+    "Hawaii",
+    "Idaho",
+    "Illinois",
+    "Indiana",
+    "Iowa",
+    "Kansas",
+    "Kentucky",
+    "Louisiana",
+    "Maine",
+    "Maryland",
+    "Massachusetts",
+    "Michigan",
+    "Minnesota",
+    "Mississippi",
+    "Missouri",
+    "Montana",
+    "Nebraska",
+    "Nevada",
+    "New Hampshire",
+    "New Jersey",
+    "New Mexico",
+    "New York",
+    "North Carolina",
+    "North Dakota",
+    "Ohio",
+    "Oklahoma",
+    "Oregon",
+    "Pennsylvania",
+    "Rhode Island",
+    "South Carolina",
+    "South Dakota",
+    "Tennessee",
+    "Texas",
+    "Utah",
+    "Vermont",
+    "Virginia",
+    "Washington",
+    "West Virginia",
+    "Wisconsin",
+    "Wyoming"
   ];
+
   onSelectChange() {
     // if (searchTerm.value) {
     //   console.log('onSelectChange', this.selected);
@@ -85,7 +86,7 @@ export class InfoComponent {
     // }/?filters[name][contains]=${searchTerm.value}`;
     // console.log(apiLink);
     if (!searchTerm.value) {
-      console.log('You must select a category to search');
+      console.log("You must select a category to search");
       return;
     } else {
       this.subscription = this.APIService.filterSearch(

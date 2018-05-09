@@ -1,7 +1,7 @@
 <div style="text-align:center">
   <h1> Let's get Educated!! </h1>
 </div>
-<div id='searchBox'>
+<div id="searchBox">
   <input name="title" #searchTerm>
   <button class="button" (click)="searchAPI(searchTerm)">Search</button>
 </div>
@@ -26,11 +26,9 @@
 </mat-form-field>
 <h2> You are searching within: {{state}}</h2> -->
 
-
-
-<div class=' card '>
-  <ng-container *ngFor='let call of data.data '>
-    <h2> {{call.name}}</h2>
+<div class="card">
+  <ng-container *ngFor="let call of data.data">
+    <h2> {{call.name}} </h2>
     <!-- <img src='{{call.featured_img}}'> -->
   </ng-container>
 </div>
@@ -90,7 +88,7 @@
     </div>
     <mat-card-content>
       <p>
-        EEEEEEEEeEEEEeEEEE
+        EEEEEEEEeEEEEeEEEE: LETS GET CRUNKKKKKKKKKKK!!!
       </p>
     </mat-card-content>
   </mat-card>
@@ -99,5 +97,5 @@
 <br>
 <br>
 <h3>
-  <a routerLink="">Let's Go Back</a>
+  <button routerLink="" mat-raised-button color="accent">Go Back Home</button>
 </h3>

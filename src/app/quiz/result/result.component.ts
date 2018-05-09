@@ -14,6 +14,7 @@ export class ResultComponent implements OnInit {
   medium = "YOU'RE a BIT HIGH YOU SHOULD TAKE A BREATHER (not a puff)";
   high = "DUDE CALM YOUR TITS, THEY'RE FALLING OFF";
   tooHigh = "JUST GO TO FUCKING BED";
+  status = "YOUR STATUS IS";
 
   constructor(public answersService: AnswersService, private router: Router) {}
 

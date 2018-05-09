@@ -33,6 +33,12 @@ export class QuestionsComponent implements OnInit {
     this.router.navigateByUrl(`quiz/question/${nextQuestionId}`);
   }
 
+  startTime() {
+    setInterval((router: Router) => {
+      this.router.navigateByUrl("timeout");
+    }, 60000);
+  }
+
   submitAnswer(questionId: number, points: number) {
     this.answersService.setAnswer(this.question.questionId, this.points);
     console.log("SUBMITTED ANSWERS :", this.answersService.selectedAnswers);

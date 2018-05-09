@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700");
 
 $anim-text-offset: 1em;
-$Poppin-font: 'Poppins', sans-serif;
+$Poppin-font: "Poppins", sans-serif;
 $darkgr-color: #015527;
 $Leaf-color: #008023;
 $darker-grey: #212121;
 $lighter-grey: #303030;
-$get-path-to-assets: '../';
+$get-path-to-assets: "../";
 
 h1 {
   color: white;
@@ -39,17 +39,17 @@ h2 {
   background-color: black;
 }
 .indica-header-image {
-  background-image: url('./indica.jpg');
+  background-image: url("./indica.jpg");
   background-size: cover;
 }
 
 .sativa-header-image {
-  background-image: url('./sativa.jpg');
+  background-image: url("./sativa.jpg");
   background-size: cover;
 }
 
 .hybrid-header-image {
-  background-image: url('./hybrid.jpg');
+  background-image: url("./hybrid.jpg");
   background-size: cover;
 }
 

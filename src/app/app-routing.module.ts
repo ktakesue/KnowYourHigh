@@ -6,6 +6,7 @@ import { InfoComponent } from "./info/info.component";
 import { DefaultComponent } from "./default/default.component";
 import { QuestionsComponent } from "./quiz/questions/questions.component";
 import { ResultComponent } from "./quiz/result/result.component";
+import { TimeoutComponent } from "./quiz/timeout/timeout.component";
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: "info",
     component: InfoComponent
+  },
+  {
+    path: "timeout",
+    component: TimeoutComponent
   },
   {
     path: "**",
