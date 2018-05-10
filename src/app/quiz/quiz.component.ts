@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { Idle, DEFAULT_INTERRUPTSOURCES } from "@ng-idle/core";
+import { Keepalive } from "@ng-idle/keepalive";
 
 @Component({
   selector: "kt-quiz",
@@ -7,12 +9,5 @@ import { Router } from "@angular/router";
   styleUrls: ["./quiz.component.scss"]
 })
 export class QuizComponent implements OnInit {
-  constructor(private router: Router) {}
-  startTime() {
-    setInterval((router: Router) => {
-      this.router.navigateByUrl("timeout");
-    }, 120000);
-  }
-
   ngOnInit() {}
 }

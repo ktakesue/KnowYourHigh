@@ -40,6 +40,8 @@ import {
 import { CommonModule } from "@angular/common";
 import { FormControl, Validators } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { NgIdleKeepaliveModule } from "@ng-idle/keepalive";
+import { MomentModule } from "angular2-moment";
 
 import { APIService } from "./api.service";
 import { QuizService } from "./quiz/quiz.service";
@@ -79,7 +81,9 @@ import { AnswersService } from "./quiz/answers.service";
     HttpClientModule,
     CommonModule,
     MatInputModule,
-    EmbedVideo.forRoot()
+    EmbedVideo.forRoot(),
+    MomentModule,
+    NgIdleKeepaliveModule.forRoot()
   ],
   providers: [QuizService, AnswersService, APIService],
   bootstrap: [AppComponent]
